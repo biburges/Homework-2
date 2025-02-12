@@ -26,4 +26,31 @@ Create data engine with model in the loop
 - Precise auto annotations
 - Good for object tracking and segmenting
 ## How to Install Code and Libraries
+First, Open a New Terminal and Clone the Repository
+```
+git clone https://github.com/facebookresearch/segment-anything-2.git
+```
+Next, Enter the Directory and install SAM 2
+```	
+cd segment-anything-2
+```
+```	
+pip install -e .
+```
+Then, Install the Depednecies for the demo
+```
+pip install -e ".[demo]"
+
+```
+Then, Download all the Checkpoints
+
+```
+cd checkpoints
+./download_ckpts.sh
+```
+Now create a new directory called "custom_code" to store all of the custom notebooks and scripts
+
 ## How to Run the Code
+
+
+
