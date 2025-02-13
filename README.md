@@ -25,8 +25,55 @@ Create data engine with model in the loop
 - Minimal human intervention is needed
 - Precise auto annotations
 - Good for object tracking and segmenting
-## How to Install Code and Libraries
-First, Open a New Terminal and Clone the Repository
+## How to Install Code and Libraries(Best for Linux)
+### Before Installation ###
+Make sure you have the following:
+
+**Anaconda**
+- Installation code:
+    ```
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh
+    ```
+- Verify the Version
+    ```
+    conda --version
+    ```
+**PyTorch**
+- Installation code
+    ```
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+    ```
+**OpenCV**
+- Installation code
+    ```
+    pip install opencv-contrib-python
+    ```
+**Jupyter Notebook**
+- Installation code
+    ```
+    pip install notebook
+    ```
+**Matplotlib**
+- Installation code
+    ```
+    pip install matplotlib
+    ```
+**Pillow**
+-Installation code
+    ```
+    pip install Pillow
+    ```
+### During Installation of SAM2 ###
+Enter Anaconda Environment
+```
+conda create -n sam2 python=3.12
+```
+Activate Anaconda
+```
+conda activate sam2
+```
+Clone the Repository
 ```
 git clone https://github.com/facebookresearch/segment-anything-2.git
 ```
@@ -37,7 +84,7 @@ cd segment-anything-2
 ```	
 pip install -e .
 ```
-Then, Install the Depednecies for the demo
+Then, Install the Depedencies for the demo
 ```
 pip install -e ".[demo]"
 
@@ -48,9 +95,10 @@ Then, Download all the Checkpoints
 cd checkpoints
 ./download_ckpts.sh
 ```
-Now create a new directory called "custom_code" to store all of the custom notebooks and scripts
 
 ## How to Run the Code
+Go to the notebooks folder through the directory and open the jupyter notebook titled "video_predictor_example.ipynb"
+
 
 
 
