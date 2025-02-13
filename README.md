@@ -128,7 +128,7 @@ cd checkpoints
 **Setup**
 Go to the notebooks folder through the directory and open the jupyter notebook titled "video_predictor_example.ipynb"
 
-Open Colab using the link provided in the jupyter script
+Open Colab using the link provided in the jupyter script(ignore if just using jupyter notebook)
 
 Execute the code stating you are using Colab to run SAM2
 ```
@@ -222,7 +222,7 @@ def show_box(box, ax):
     w, h = box[2] - box[0], box[3] - box[1]
     ax.add_patch(plt.Rectangle((x0, y0), w, h, edgecolor='green', facecolor=(0, 0, 0, 0), lw=2))
 ```
-Upload you sample image into SAM2
+Upload your sample image into SAM2(stock provided by SAM2)
 ```
 # `video_dir` a directory of JPEG frames with filenames like `<frame_index>.jpg`
 video_dir = "./videos/bedroom"
@@ -240,6 +240,8 @@ plt.figure(figsize=(9, 6))
 plt.title(f"frame {frame_idx}")
 plt.imshow(Image.open(os.path.join(video_dir, frame_names[frame_idx])))
 ```
+![alt text](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAvEAAAHKCAYAAACKbRQSAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjkuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/TGe4hAAAACXBIWXMAAA9hAAAPYQGoP6dpAAEAAElEQVR4nOz9e6xtS1YXAP9G1ZxzrbX3PufcV9MvupEP5eEXA4ZHB4IC2oSHGEHSSNKRR1QISYvYEez2AQFNd0SMKJKQ+A9iIGpLQpAYDGkNmNihASXyGQigQL/v7XvPaz/WmnNW1fj+GDWqas4119p7n7PP65457l1nrzUf9a5Rv/GoUcTMjJlmmmmmmWaaaaaZZprpiSHzqAsw00wzzTTTTDPNNNNMM12OZhA/00wzzTTTTDPNNNNMTxjNIH6mmWaaaaaZZpppppmeMJpB/EwzzTTTTDPNNNNMMz1hNIP4mWaaaaaZZppppplmesJoBvEzzTTTTDPNNNNMM830hNEM4meaaaaZZppppplmmukJoxnEzzTTTDPNNNNMM8000xNGM4ifaaaZZppppplmmmmmJ4xmED/TTDPN9ITQr/3ar+FLvuRLcHh4CCLCb/7mbz7qIs0000wzzfSIaAbxM80000xPAPV9j7e97W24efMm/vk//+f4t//23+LTPu3THnWxrox++7d/G1/91V+No6MjPPfcc/irf/Wv4pOf/OSjLtZMM80002NLxMz8qAsx00wzzTTTfvqd3/kdfM7nfA7+9b/+1/jrf/2vP+riXCl95CMfwZ/+038aN27cwHd/93fj5OQEP/IjP4I3v/nN+OAHP4imaR51EWeaaaaZHjuqHnUBZppppplmOp9eeuklAMAzzzxz7rOnp6c4PDx8wCW6OnrPe96D09NT/MZv/Abe/OY3AwC+6Iu+CF/5lV+Jn/zJn8R3fMd3POISzjTTTDM9fjS708w000wzPeb0bd/2bfiyL/syAMDb3vY2EBG+/Mu/PN07OjrC//2//xdf+7Vfi2vXruHtb387AOC///f/jre97W1485vfjMVigTe96U3423/7b2O9Xm+lf3R0hA996EP4uq/7OhwdHeGNb3wjfvzHfxwA8Fu/9Vv4c3/uz+Hw8BCf9mmfhp/5mZ/ZKuPt27fxPd/zPXjTm96ExWKBP/7H/zj+yT/5JwghnFu/n/3Zn8XXfd3XJQAPAG9961vxmZ/5mfgP/+E/3FObzTTTTDO92mnWxM8000wzPeb0nd/5nXjjG9+I97znPfju7/5ufOEXfiFe+9rXpvvOOXzVV30VvvRLvxQ/8iM/goODAwDA+973PpydneG7vuu78Pzzz+ODH/wgfuzHfgwf+chH8L73vW+Qh/ceX/M1X4M/+2f/LH74h38YP/3TP413vOMdODw8xN//+38fb3/72/GX//Jfxk/8xE/gW77lW/DFX/zF+PRP/3QAwNnZGb7sy74MH/3oR/Gd3/mdePOb34z/8T/+B9797nfj4x//OH70R390Z90++tGP4qWXXsIXfMEXbN37oi/6Ivzn//yfr6AFZ5pppplehcQzzTTTTDM99vTf/tt/YwD8vve9b3D9W7/1WxkAv+td79p65+zsbOvae9/7XiYi/qM/+qOtNN7znveka7du3eLVasVExP/u3/27dP13fud3GAD/wA/8QLr2j/7RP+LDw0P+3d/93UFe73rXu9hayx/60Id21uvXfu3XGAD/1E/91Na97/3e72UAvNlsdr4/00wzzfS00uxOM9NMM830KqDv+q7v2rq2Wq3S99PTU7z88sv4ki/5EjAz/tf/+l9bz5cbZp955hl81md9Fg4PD/FN3/RN6fpnfdZn4ZlnnsH/+3//L1173/vehz/zZ/4Mnn32Wbz88svp89a3vhXee/zKr/zKznKra89isdi6t1wuB8/MNNNMM82UaXanmWmmmWZ6wqmqKnzqp37q1vUPfehD+P7v/378/M//PG7dujW4d+fOncHv5XKJ17zmNYNrN27cwKd+6qeCiLaul+n93u/9Hv73//7fW+8r6abcKVJBo23brXubzWbwzEwzzTTTTJlmED/TTDPN9ITTYrGAMUPDqvceX/mVX4mbN2/i7/7dv4vP/uzPxuHhIT760Y/i277t27Y2nFprJ9PedZ2L6MQhBHzlV34lvu/7vm/y2c/8zM/cWfbXv/71AICPf/zjW/c+/vGP47nnnpvU0s8000wzPe00g/iZZpppplch/dZv/RZ+93d/F//m3/wbfMu3fEu6/ku/9EtXntdnfMZn4OTkBG9961sv/e4b3/hGvOY1r8Gv//qvb9374Ac/iM/7vM+7ghLONNNMM736aPaJn2mmmWZ6FZJq0EuNOTPjX/yLf3HleX3TN30TPvCBD+C//Jf/snXv9u3bcM7tff8bv/Eb8Qu/8Av48Ic/nK69//3vx+/+7u/ibW9725WXd6aZZprp1UCzJn6mmWaa6VVIn/3Zn43P+IzPwN/5O38HH/3oR3H9+nX87M/+7JZv/FXQ937v9+Lnf/7n8XVf93X4tm/7Nnz+538+Tk9P8Vu/9Vv4j//xP+IP//AP8cILL+x8/+/9vb+H973vffiKr/gK/K2/9bdwcnKCf/pP/yn+1J/6U/j2b//2Ky/vTDPNNNOrgWYQP9NMM830KqS6rvGf/tN/wnd/93fjve99L5bLJb7hG74B73jHO/C5n/u5V5rXwcEBfvmXfxnvec978L73vQ8/9VM/hevXr+MzP/Mz8YM/+IO4cePG3vff9KY34Zd/+Zfxzne+E+9617vQNA3+wl/4C/hn/+yfzf7wM80000w7iLi0tc4000wzzTTTTDPNNNNMjz3NPvEzzTTTTDPNNNNMM830hNEM4meaaaaZZppppplmmukJoxnEzzTTTDPNNNNMM8000xNGjxTE//iP/zj+2B/7Y1gul3jLW96CD37wg4+yODPNNNNMM80000wzzfRE0CMD8f/+3/97vPOd78QP/MAP4H/+z/+Jz/3cz8VXfdVX7T2ee6aZZppppplmmmmmmWZ6hNFp3vKWt+ALv/AL8a/+1b8CIMd2v+lNb8Lf/Jt/E+9617seRZFmmmmmmWaaaaaZZprpiaBHEie+6zr8xm/8Bt797nena8YYvPWtb8UHPvCBrefbtkXbtul3CAE3b97E888/DyJ6KGWeaaaZZppppplmmmmmB03MjOPjY7zhDW+AMbudZh4JiH/55ZfhvcdrX/vawfXXvva1+J3f+Z2t59/73vfiB3/wBx9W8WaaaaaZZppppplmmumR0oc//GF86qd+6s77T8SJre9+97vxzne+M/2+c+cO3vzmN+P/9+EP49q160DyCCKEwEAAUDoJMYOZwUG09kQEMgFkCMYAxhIIAIHAABhPx/lXgRlhoqq7PKzIGbnHDKbhswQCMYMDI4QA9h36dgPvHEII6VkiSh+9FkKANRZ1ZcEICH2P4zu30XctwEF6ZVSkgNinzDDGgEwFYwyqqkJVN7B1Lc95D+96uL6Hcw4M4PatW3jxpZfwhte/HsvVSiuS6++D1CVe48AgrSszEBgMuQYAfJmdJYytumi7jNte6odUTzaEylZYrg7QNDU4AIGlH5ll1LIBQIS6rrFYLEDWyH0CrLVgZlhrwAysz9bo+w6WgQqE4DzgOY4LBlmDetGgWjSAMSCTrV6lBYwCo2tbcGDZZMMMgAZtBCIsDlaomlqmJ+VmoJieMQYGhLZt4foexEWT6XiLf4kNmkWDum5AFOctMUJRttx/HggBHAIQAkLwgJfrBEZlALBD8Bv4boOPf/iP8Ae//3u4desmju/exd07t9Gu12i7Fn3Xw9oaR0fXUC8aBO/Rty3e/Gmfji/6ki/DjRc+BYuDa6B6CRgLmAogAlmCrSyqugGsBWjYlmkexe/GGPRtB+4daGI+pnESxwgZAlUWtlnAxH7eerYgAmCJ0G026LoOBpEHjsdmYej00q0w1qBpFgABHNt+u4CA0S1XxAhB2sn7oJfkodSf8RNLxwACCW+umgZkDMAmjSeyBZunnKfUQeao73u0bQcwQ0tJQBp4XMxxzZ)
+
 Initialize the Inference State
 ```
 inference_state = predictor.init_state(video_path=video_dir)
@@ -369,6 +371,200 @@ for out_frame_idx in range(0, len(frame_names), vis_frame_stride):
         show_mask(out_mask, plt.gca(), obj_id=out_obj_id)
 ```
 **Segment an object using box prompt**
+
+If you have previously run interefence_state, you must reset it using the code:
+```
+predictor.reset_state(inference_state)
+```
+This is creating the box prompt on frame 0
+```
+ann_frame_idx = 0  # the frame index we interact with
+ann_obj_id = 4  # give a unique id to each object we interact with (it can be any integers)
+
+# Let's add a box at (x_min, y_min, x_max, y_max) = (300, 0, 500, 400) to get started
+box = np.array([300, 0, 500, 400], dtype=np.float32)
+_, out_obj_ids, out_mask_logits = predictor.add_new_points_or_box(
+    inference_state=inference_state,
+    frame_idx=ann_frame_idx,
+    obj_id=ann_obj_id,
+    box=box,
+)
+
+# show the results on the current (interacted) frame
+plt.figure(figsize=(9, 6))
+plt.title(f"frame {ann_frame_idx}")
+plt.imshow(Image.open(os.path.join(video_dir, frame_names[ann_frame_idx])))
+show_box(box, plt.gca())
+show_mask((out_mask_logits[0] > 0.0).cpu().numpy(), plt.gca()
+```
+Further refine the segmentation mask from a box prompt
+```
+ann_frame_idx = 0  # the frame index we interact with
+ann_obj_id = 4  # give a unique id to each object we interact with (it can be any integers)
+
+# Let's add a positive click at (x, y) = (460, 60) to refine the mask
+points = np.array([[460, 60]], dtype=np.float32)
+# for labels, `1` means positive click and `0` means negative click
+labels = np.array([1], np.int32)
+# note that we also need to send the original box input along with
+# the new refinement click together into `add_new_points_or_box`
+box = np.array([300, 0, 500, 400], dtype=np.float32)
+_, out_obj_ids, out_mask_logits = predictor.add_new_points_or_box(
+    inference_state=inference_state,
+    frame_idx=ann_frame_idx,
+    obj_id=ann_obj_id,
+    points=points,
+    labels=labels,
+    box=box,
+)
+
+# show the results on the current (interacted) frame
+plt.figure(figsize=(9, 6))
+plt.title(f"frame {ann_frame_idx}")
+plt.imshow(Image.open(os.path.join(video_dir, frame_names[ann_frame_idx])))
+show_box(box, plt.gca())
+show_points(points, labels, plt.gca())
+show_mask((out_mask_logits[0] > 0.0).cpu().numpy(), plt.gca(), obj_id=out_obj_ids[0])
+```
+Then get the masklet throughout the entire video and propogate the prompts
+```
+# run propagation throughout the video and collect the results in a dict
+video_segments = {}  # video_segments contains the per-frame segmentation results
+for out_frame_idx, out_obj_ids, out_mask_logits in predictor.propagate_in_video(inference_state):
+    video_segments[out_frame_idx] = {
+        out_obj_id: (out_mask_logits[i] > 0.0).cpu().numpy()
+        for i, out_obj_id in enumerate(out_obj_ids)
+    }
+
+# render the segmentation results every few frames
+vis_frame_stride = 30
+plt.close("all")
+for out_frame_idx in range(0, len(frame_names), vis_frame_stride):
+    plt.figure(figsize=(6, 4))
+    plt.title(f"frame {out_frame_idx}")
+    plt.imshow(Image.open(os.path.join(video_dir, frame_names[out_frame_idx])))
+    for out_obj_id, out_mask in video_segments[out_frame_idx].items():
+        show_mask(out_mask, plt.gca(), obj_id=out_obj_id)
+```
+** Segment multiple objects **
+
+If you have previously run interefence_state, you must reset it using the code:
+```
+predictor.reset_state(inference_state)
+```
+Add two objects on a frame
+```
+prompts = {}  # hold all the clicks we add for visualization
+```
+Select the Frame and assign an object id
+```
+ann_frame_idx = 0  # the frame index we interact with
+ann_obj_id = 2  # give a unique id to each object we interact with (it can be any integers)
+
+# Let's add a positive click at (x, y) = (200, 300) to get started on the first object
+points = np.array([[200, 300]], dtype=np.float32)
+# for labels, `1` means positive click and `0` means negative click
+labels = np.array([1], np.int32)
+prompts[ann_obj_id] = points, labels
+_, out_obj_ids, out_mask_logits = predictor.add_new_points_or_box(
+    inference_state=inference_state,
+    frame_idx=ann_frame_idx,
+    obj_id=ann_obj_id,
+    points=points,
+    labels=labels,
+)
+
+# show the results on the current (interacted) frame
+plt.figure(figsize=(9, 6))
+plt.title(f"frame {ann_frame_idx}")
+plt.imshow(Image.open(os.path.join(video_dir, frame_names[ann_frame_idx])))
+show_points(points, labels, plt.gca())
+for i, out_obj_id in enumerate(out_obj_ids):
+    show_points(*prompts[out_obj_id], plt.gca())
+    show_mask((out_mask_logits[i] > 0.0).cpu().numpy(), plt.gca(), obj_id=out_obj_id)
+```
+Negative click to refine the mask, for this situation, only have the mask over the boys shirt
+```
+# add the first object
+ann_frame_idx = 0  # the frame index we interact with
+ann_obj_id = 2  # give a unique id to each object we interact with (it can be any integers)
+
+# Let's add a 2nd negative click at (x, y) = (275, 175) to refine the first object
+# sending all clicks (and their labels) to `add_new_points_or_box`
+points = np.array([[200, 300], [275, 175]], dtype=np.float32)
+# for labels, `1` means positive click and `0` means negative click
+labels = np.array([1, 0], np.int32)
+prompts[ann_obj_id] = points, labels
+_, out_obj_ids, out_mask_logits = predictor.add_new_points_or_box(
+    inference_state=inference_state,
+    frame_idx=ann_frame_idx,
+    obj_id=ann_obj_id,
+    points=points,
+    labels=labels,
+)
+
+# show the results on the current (interacted) frame
+plt.figure(figsize=(9, 6))
+plt.title(f"frame {ann_frame_idx}")
+plt.imshow(Image.open(os.path.join(video_dir, frame_names[ann_frame_idx])))
+show_points(points, labels, plt.gca())
+for i, out_obj_id in enumerate(out_obj_ids):
+    show_points(*prompts[out_obj_id], plt.gca())
+    show_mask((out_mask_logits[i] > 0.0).cpu().numpy(), plt.gca(), obj_id=out_obj_id)
+```
+Create an object id and select your frame to add a positive click for another object, for this situation, the shirt of the kid on the right
+```
+ann_frame_idx = 0  # the frame index we interact with
+ann_obj_id = 3  # give a unique id to each object we interact with (it can be any integers)
+
+# Let's now move on to the second object we want to track (giving it object id `3`)
+# with a positive click at (x, y) = (400, 150)
+points = np.array([[400, 150]], dtype=np.float32)
+# for labels, `1` means positive click and `0` means negative click
+labels = np.array([1], np.int32)
+prompts[ann_obj_id] = points, labels
+
+# `add_new_points_or_box` returns masks for all objects added so far on this interacted frame
+_, out_obj_ids, out_mask_logits = predictor.add_new_points_or_box(
+    inference_state=inference_state,
+    frame_idx=ann_frame_idx,
+    obj_id=ann_obj_id,
+    points=points,
+    labels=labels,
+)
+
+# show the results on the current (interacted) frame on all objects
+plt.figure(figsize=(9, 6))
+plt.title(f"frame {ann_frame_idx}")
+plt.imshow(Image.open(os.path.join(video_dir, frame_names[ann_frame_idx])))
+show_points(points, labels, plt.gca())
+for i, out_obj_id in enumerate(out_obj_ids):
+    show_points(*prompts[out_obj_id], plt.gca())
+    show_mask((out_mask_logits[i] > 0.0).cpu().numpy(), plt.gca(), obj_id=out_obj_id)
+```
+Propogate the prompts to get maskets across the video
+
+```
+# run propagation throughout the video and collect the results in a dict
+video_segments = {}  # video_segments contains the per-frame segmentation results
+for out_frame_idx, out_obj_ids, out_mask_logits in predictor.propagate_in_video(inference_state):
+    video_segments[out_frame_idx] = {
+        out_obj_id: (out_mask_logits[i] > 0.0).cpu().numpy()
+        for i, out_obj_id in enumerate(out_obj_ids)
+    }
+
+# render the segmentation results every few frames
+vis_frame_stride = 30
+plt.close("all")
+for out_frame_idx in range(0, len(frame_names), vis_frame_stride):
+    plt.figure(figsize=(6, 4))
+    plt.title(f"frame {out_frame_idx}")
+    plt.imshow(Image.open(os.path.join(video_dir, frame_names[out_frame_idx])))
+    for out_obj_id, out_mask in video_segments[out_frame_idx].items():
+        show_mask(out_mask, plt.gca(), obj_id=out_obj_id)
+```
+
+
 ## Troubleshooting
 **Module conda does not exist**
 - If your conda functions "do not exist" due to you having existing anaconda setup files stored in another directory, download miniconda
