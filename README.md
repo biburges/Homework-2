@@ -596,4 +596,4 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 ```
-
+Complications arised with getting it to install everything. Some modifications were made to the setup.py to match it to the pytorch. Additionally, it is strongest on Linux but due to the large amount of memory it consumes, the kernel would die in jupyter notebook or it would take over an hour to propogate the prompts in Google CoLab.
