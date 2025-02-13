@@ -135,6 +135,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 ```
 Select the device for computation
+```
 if torch.cuda.is_available():
     device = torch.device("cuda")
 elif torch.backends.mps.is_available():
@@ -158,6 +159,7 @@ elif device.type == "mps":
     )
 **Loading the SAM 2 video predictor**
 Setup predictor based on checkpoints
+```
 ```
 from sam2.build_sam import build_sam2_video_predictor
 
